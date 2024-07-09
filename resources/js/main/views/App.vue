@@ -50,21 +50,21 @@ export default {
         const appChecking = computed(() => store.state.auth.appChecking);
 
         onMounted(() => {
-            // if (
-            //     router.currentRoute &&
-            //     router.currentRoute.value &&
-            //     router.currentRoute.value.meta.isFrontStore == undefined
-            // ) {
-            //     setInterval(() => {
-            //         store.dispatch("auth/refreshToken");
-            //     }, 5 * 60 * 1000);
-            // }
+            if (
+                router.currentRoute &&
+                router.currentRoute.value &&
+                router.currentRoute.value.meta.isFrontStore == undefined
+            ) {
+                setInterval(() => {
+                    store.dispatch("auth/refreshToken");
+                }, 5 * 60 * 1000);
+            }
         });
 
         watch(route, (newVal, oldVal) => {
-            // router.push({
-            //     name: "admin.setup_app.index",
-            // });
+            router.push({
+                name: "admin.setup_app.index",
+            });
 
             const menuKey =
                 typeof newVal.meta.menuKey == "function"
@@ -92,11 +92,11 @@ export default {
             }
         });
 
-        // watch(frontWarehouse, (newVal, oldVal) => {
-        //     if (newVal && newVal.slug) {
-        //         store.dispatch("front/updateApp", newVal.slug);
-        //     }
-        // });
+        watch(frontWarehouse, (newVal, oldVal) => {
+            if (newVal && newVal.slug) {
+                store.dispatch("front/updateApp", newVal.slug);
+            }
+        });
 
         return {
             theme,
