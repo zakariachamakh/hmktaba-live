@@ -1,7 +1,7 @@
 <template>
     <AdminPageHeader>
         <template #header>
-            <a-page-header :title="$t(`menu.online_orders`)" class="p-0" />
+            <a-page-header :title="$t(`menu.online_orders`)" class="p-0"/>
         </template>
         <template #breadcrumb>
             <a-breadcrumb separator="-" style="font-size: 12px">
@@ -113,9 +113,9 @@
                         :tab="`${$t('common.all')} ${$t('menu.online_orders')}`"
                     />
 
-                    <a-tab-pane key="pending" :tab="$t('common.pending')" />
-                    <a-tab-pane key="delivered" :tab="$t('common.delivered')" />
-                    <a-tab-pane key="cancelled" :tab="$t('common.cancelled')" />
+                    <a-tab-pane key="pending" :tab="$t('common.pending')"/>
+                    <a-tab-pane key="delivered" :tab="$t('common.delivered')"/>
+                    <a-tab-pane key="cancelled" :tab="$t('common.cancelled')"/>
                 </a-tabs>
             </a-col>
         </a-row>
@@ -131,9 +131,9 @@
 </template>
 
 <script>
-import { onMounted, watch, ref } from "vue";
-import { PlusOutlined } from "@ant-design/icons-vue";
-import { useRouter } from "vue-router";
+import {onMounted, watch, ref} from "vue";
+import {PlusOutlined} from "@ant-design/icons-vue";
+import {useRouter} from "vue-router";
 import common from "../../../../common/composable/common";
 import OrderTable from "../../../components/order/OrderTable.vue";
 import DateRangePicker from "../../../../common/components/common/calendar/DateRangePicker.vue";
@@ -183,7 +183,7 @@ export default {
         const generateStorePath = () => {
             const storePathString = router.resolve({
                 name: "front.homepage",
-                params: { warehouse: selectedWarehouse.value.slug },
+                params: {warehouse: selectedWarehouse.value.slug},
             });
             storeUrl.value = window.config.path + storePathString.href;
         };

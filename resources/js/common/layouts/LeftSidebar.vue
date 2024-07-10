@@ -762,11 +762,11 @@
                     </a-menu-item>
 
                     <a-sub-menu
-                        v-if="
-                            (permsArray.includes('product_cards_view') ||
-                                permsArray.includes('admin')) &&
-                            willSubscriptionModuleVisible('online_store')
-                        "
+<!--                        v-if="-->
+<!--                            (permsArray.includes('product_cards_view') ||-->
+<!--                                permsArray.includes('admin')) &&-->
+<!--                            willSubscriptionModuleVisible('online_store')-->
+<!--                        "-->
                         key="website_setup"
                     >
                         <template #title>
