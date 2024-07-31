@@ -110,45 +110,45 @@
                                     {{ formatAmountCurrency(item.subtotal) }}
                                 </td>
                             </tr>
-                            <tr class="item-row-other">
-                                <td
-                                    :colspan="
-                                        selectedWarehouse.show_mrp_on_invoice ? 4 : 3
-                                    "
-                                    style="text-align: right"
-                                >
-                                    {{ $t("stock.order_tax") }}
-                                </td>
-                                <td colspan="2" style="text-align: right">
-                                    {{ formatAmountCurrency(order.tax_amount) }}
-                                </td>
-                            </tr>
-                            <tr class="item-row-other">
-                                <td
-                                    :colspan="
-                                        selectedWarehouse.show_mrp_on_invoice ? 4 : 3
-                                    "
-                                    style="text-align: right"
-                                >
-                                    {{ $t("stock.discount") }}
-                                </td>
-                                <td colspan="2" style="text-align: right">
-                                    {{ formatAmountCurrency(order.discount) }}
-                                </td>
-                            </tr>
-                            <tr class="item-row-other">
-                                <td
-                                    :colspan="
-                                        selectedWarehouse.show_mrp_on_invoice ? 4 : 3
-                                    "
-                                    style="text-align: right"
-                                >
-                                    {{ $t("stock.shipping") }}
-                                </td>
-                                <td colspan="2" style="text-align: right">
-                                    {{ formatAmountCurrency(order.shipping) }}
-                                </td>
-                            </tr>
+<!--                            <tr class="item-row-other">-->
+<!--                                <td-->
+<!--                                    :colspan="-->
+<!--                                        selectedWarehouse.show_mrp_on_invoice ? 4 : 3-->
+<!--                                    "-->
+<!--                                    style="text-align: right"-->
+<!--                                >-->
+<!--                                    {{ $t("stock.order_tax") }}-->
+<!--                                </td>-->
+<!--                                <td colspan="2" style="text-align: right">-->
+<!--                                    {{ formatAmountCurrency(order.tax_amount) }}-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr class="item-row-other">-->
+<!--                                <td-->
+<!--                                    :colspan="-->
+<!--                                        selectedWarehouse.show_mrp_on_invoice ? 4 : 3-->
+<!--                                    "-->
+<!--                                    style="text-align: right"-->
+<!--                                >-->
+<!--                                    {{ $t("stock.discount") }}-->
+<!--                                </td>-->
+<!--                                <td colspan="2" style="text-align: right">-->
+<!--                                    {{ formatAmountCurrency(order.discount) }}-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr class="item-row-other">-->
+<!--                                <td-->
+<!--                                    :colspan="-->
+<!--                                        selectedWarehouse.show_mrp_on_invoice ? 4 : 3-->
+<!--                                    "-->
+<!--                                    style="text-align: right"-->
+<!--                                >-->
+<!--                                    {{ $t("stock.shipping") }}-->
+<!--                                </td>-->
+<!--                                <td colspan="2" style="text-align: right">-->
+<!--                                    {{ formatAmountCurrency(order.shipping) }}-->
+<!--                                </td>-->
+<!--                            </tr>-->
                         </tbody>
                     </table>
                 </div>
@@ -188,66 +188,66 @@
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <table style="width: 100%">
-                        <tr style="text-align: center">
-                            <td style="width: 100%">
-                                <h4
-                                    style="margin-bottom: 0px"
-                                    v-if="order.order_payments"
-                                >
-                                    {{ $t("invoice.payment_mode") }}:
-                                    <span
-                                        v-for="currentOrderPayments in order.order_payments"
-                                        :key="currentOrderPayments.xid"
-                                        style="margin-right: 5px"
-                                    >
-                                        {{
-                                            formatAmountCurrency(
-                                                currentOrderPayments.amount
-                                            )
-                                        }}
-                                        (<span
-                                            v-if="
-                                                currentOrderPayments.payment &&
-                                                currentOrderPayments.payment
-                                                    .payment_mode &&
-                                                currentOrderPayments.payment.payment_mode
-                                                    .name
-                                            "
-                                        >
-                                            {{
-                                                currentOrderPayments.payment.payment_mode
-                                                    .name
-                                            }}
-                                        </span>
-                                        )
-                                    </span>
-                                </h4>
-                                <h3 style="margin-bottom: 0px" v-else>
-                                    {{ $t("invoice.payment_mode") }}: -
-                                </h3>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div
-                    v-if="selectedWarehouse.show_discount_tax_on_invoice"
-                    class="discount-details"
-                >
-                    <p>
-                        {{ $t("invoice.total_discount_on_mrp") }} :
-                        {{ formatAmountCurrency(order.saving_on_mrp) }}
-                    </p>
-                    <p>
-                        {{ $t("invoice.total_discount") }} :
-                        {{ order.saving_percentage }}%
-                    </p>
-                    <p>
-                        {{ $t("invoice.total_tax") }} :
-                        {{ formatAmountCurrency(order.total_tax_on_items) }}
-                    </p>
-                </div>
+<!--                <div>-->
+<!--                    <table style="width: 100%">-->
+<!--                        <tr style="text-align: center">-->
+<!--                            <td style="width: 100%">-->
+<!--                                <h4-->
+<!--                                    style="margin-bottom: 0px"-->
+<!--                                    v-if="order.order_payments"-->
+<!--                                >-->
+<!--                                    {{ $t("invoice.payment_mode") }}:-->
+<!--                                    <span-->
+<!--                                        v-for="currentOrderPayments in order.order_payments"-->
+<!--                                        :key="currentOrderPayments.xid"-->
+<!--                                        style="margin-right: 5px"-->
+<!--                                    >-->
+<!--                                        {{-->
+<!--                                            formatAmountCurrency(-->
+<!--                                                currentOrderPayments.amount-->
+<!--                                            )-->
+<!--                                        }}-->
+<!--                                        (<span-->
+<!--                                            v-if="-->
+<!--                                                currentOrderPayments.payment &&-->
+<!--                                                currentOrderPayments.payment-->
+<!--                                                    .payment_mode &&-->
+<!--                                                currentOrderPayments.payment.payment_mode-->
+<!--                                                    .name-->
+<!--                                            "-->
+<!--                                        >-->
+<!--                                            {{-->
+<!--                                                currentOrderPayments.payment.payment_mode-->
+<!--                                                    .name-->
+<!--                                            }}-->
+<!--                                        </span>-->
+<!--                                        )-->
+<!--                                    </span>-->
+<!--                                </h4>-->
+<!--&lt;!&ndash;                                <h3 style="margin-bottom: 0px" v-else>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    {{ $t("invoice.payment_mode") }}: - &ndash;&gt;-->
+<!--&lt;!&ndash;                                </h3>&ndash;&gt;-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--                <div-->
+<!--                    v-if="selectedWarehouse.show_discount_tax_on_invoice"-->
+<!--                    class="discount-details"-->
+<!--                >-->
+<!--                    <p>-->
+<!--                        {{ $t("invoice.total_discount_on_mrp") }} :-->
+<!--                        {{ formatAmountCurrency(order.saving_on_mrp) }}-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        {{ $t("invoice.total_discount") }} :-->
+<!--                        {{ order.saving_percentage }}%-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        {{ $t("invoice.total_tax") }} :-->
+<!--                        {{ formatAmountCurrency(order.total_tax_on_items) }}-->
+<!--                    </p>-->
+<!--                </div>-->
                 <div
                     v-if="selectedWarehouse.barcode_type == 'barcode'"
                     class="barcode-details"
